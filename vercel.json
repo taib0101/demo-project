@@ -34,7 +34,6 @@
   "ignoreCommand": "echo 'No files ignored'",
   "installCommand": "npm install",
   "outputDirectory": "dist",
-  "public": "public",
   "redirects": [
     {
       "source": "/old-signup",
