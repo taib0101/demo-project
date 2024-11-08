@@ -46,7 +46,6 @@
     "sfo1",
     "iad1"
   ],
-  "functionFailoverRegion": "iad1",
   "rewrites": [
     {
       "source": "/api/(.*)",
