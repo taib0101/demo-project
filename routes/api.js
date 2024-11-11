@@ -4,9 +4,14 @@ import mongoose from "mongoose";
 
 const router = express.Router();
 router.use(express.json());
+import dotenv from "dotenv";
+
+dotenv.config({ path: "./app/config/.env" });
+
+const URI = (process.env.environment === "staging") ? process.env.MONGODB_DEVELOPMENT_CONNECTION : process.env.MONGODB_PRODUCTION_CONNECTION;
 
 router.get("/signin", (req, res) => {
-    res.status(200).send("Hello world");
+    res.status(200).send(URI);
 });
 
 router.post("/signup", async (req, res) => {
