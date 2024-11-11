@@ -20,7 +20,11 @@ export const connect = async () => {
 
 const userSchema = new Schema({
     email: String,
-    password: String
+    password: String,
+    timeStamp: {
+        type: Date,
+        default: Date.now
+    }
 }, { versionKey: false });
 
 export const modelCollection = new mongoose.model("user", userSchema);
