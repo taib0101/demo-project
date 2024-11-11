@@ -1,55 +1,19 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    }
+      {
+          "src": "app.js",
+          "use": "@vercel/node"
+      }
   ],
-  "buildCommand": "npm run build",
-  "cleanUrls": true,
-  "crons": [
-    {
-      "path": "/api/cron",
-      "schedule": "0 8 * * *"
-    }
-  ],
-  "devCommand": "npm run dev",
-  "framework": "node",
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST"
-        }
-      ]
-    }
-  ],
-  "ignoreCommand": "echo 'No files ignored'",
-  "installCommand": "npm install",
-  "outputDirectory": "dist",
-  "redirects": [
-    {
-      "source": "/old-signup",
-      "destination": "/api/signup",
-      "permanent": true
-    }
-  ],
-  "regions": [
-    "sfo1",
-    "iad1"
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/app.js"
-    }
-  ],
-  "trailingSlash": false
+  "routes": [
+      {
+          "src": "/signin",
+          "dest": "/app.js"
+      },
+      {
+          "src": "/signup",
+          "dest": "/app.js"
+      }
+  ]
 }
