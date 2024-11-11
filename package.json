@@ -5,14 +5,16 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "env1=staging nodemon app.js",
-    "build": "env2=production nodemon app.js" 
+    "development": "environment=staging nodemon app.js",
+    "production": "environment=production nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongoose": "^8.8.0"
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1"
   }
 }

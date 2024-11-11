@@ -1,9 +1,17 @@
 import express from "express";
-import router from "./router/api.js";
+import router from "./routes/api.js";
+import { connect } from "./app/models/model.js";
+import dotenv from "dotenv";
+
+dotenv.config({ path: "./app/config/.env" });
+
+connect();
 
 const app = express();
 app.use(router);
 
-app.listen(3000, () => {
-    console.log("port 3000...");
+const PORT = (process.env.environment === "staging") ? process.env.DEVELOPMENT_PORT : process.env.PRODUCTION_PORT;
+
+app.listen(PORT, () => {
+    console.log(`port ${PORT}...`);
 });
