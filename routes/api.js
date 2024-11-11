@@ -6,7 +6,7 @@ const router = express.Router();
 router.use(express.json());
 
 router.get("/signin", (req, res) => {
-
+    res.status(200).send("Hello world");
 });
 
 router.post("/signup", async (req, res) => {
