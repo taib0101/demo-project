@@ -37,7 +37,7 @@ router.post("/signup", async (req, res) => {
 });
 
 router.get("/time", (req, res) => {
-    res.send(new Date(Date.now()).toLocaleString());
+    res.send(new Date(Date.now()).toLocaleString("en-US", { path: "Asia/Dhaka" }));
 });
 
 export default router;
