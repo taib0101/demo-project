@@ -6,7 +6,6 @@ import { siginAuthentication } from "../app/middlewares/authMiddleware.js";
 
 const router = express.Router();
 router.use(express.json());
-import dotenv from "dotenv";
 
 router.post("/signin", siginAuthentication, (req, res) => {
     res.status(200).send("Hello world");
@@ -35,6 +34,10 @@ router.post("/signup", async (req, res) => {
         console.log(error);
         return res.status(500).send(error.message);
     }
+});
+
+router.get("/time", (req, res) => {
+    res.send(new Date(Date.now()).toLocaleString());
 });
 
 export default router;
